@@ -1,33 +1,65 @@
+ <div id='main' data-role='page' data-theme='c'>
+                <div data-role='header' data-theme="a">
+                    <h1>Relief Insight Mobile Marketplace</h1>
+                </div><!--header-->
+
 <p id='notice'>
   <%= notice %>
 </p>  
 
-<div id='donors'>
-  <%= render 'shared/donors', product: @product %>
-</div>
-<div id='requester'>
-  <%= render 'shared/requester', product: @product %>
-</div>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-6">
+        <div id='donors'>
+          <%= render 'shared/donors', product: @product %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id='requester'>
+          <%= render 'shared/requester', product: @product %>
 
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
+            </div>
 
+            <span>Requested items 60% satisfied</span>
 
-<p>
-  <strong>
-    Name:
-  </strong>  
-  <%= @product.name %>
-</p>
+        </div>
+     </div>
+  </div><!--row-->
+</div><!--container-->
 
-<p>
-  <strong> Needed Amount:</strong>
-  <%= @product.sum_needed_amount %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p>
+        <strong>
+          Name:
+        </strong>  
+        <%= @product.name %>
+      </p>
 
-<p>
-  <strong> Current Amount:</strong>
-  <%= @product.sum_current_amount %>
-</p>
+     <!-- 
 
-  <%= link_to 'Edit', edit_product_path(@product) %>
+        <strong> Needed Amount:</strong>
+        <%= @product.sum_needed_amount %>
+      </p>
+
+      <p>
+        <strong> Current Amount:</strong>
+        <%= @product.sum_current_amount %>
+      </p>
+
+    -->
+      <%= link_to 'Edit', edit_product_path(@product) %>
   | <%= link_to 'Back', products_path %>
+    </div>
+  </div><!--row-->
+</div><!--container-->
+
+
+</div><!--page-->
+  
 
