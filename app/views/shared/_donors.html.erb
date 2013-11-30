@@ -4,6 +4,8 @@
     <img style='width: 60px;' src=<%=donation.donor.try(:image_url)%>/>
     <li> <%= donation.donor.name %> </li>
     <li> <%= donation.donor.address%> </li>
+    <li> <%= donation.amount%></li>
+    <li> <%= donation.status%></li>
     <li> <%= time_ago_in_words donation.created_at%> </li>
   <% end %> 
 </ul>
