@@ -12,8 +12,12 @@
   = @product.name
 
 %p
-  %strong Amount:
-  = @product.amount
+  %strong Needed Amount:
+  = @product.sum_needed_amount
+
+%p
+  %strong Current Amount:
+  = @product.sum_current_amount
 
 = link_to 'Edit', edit_product_path(@product)
 |
