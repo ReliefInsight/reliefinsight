@@ -2,5 +2,5 @@
 %ul
 - Product.request_list.each do |prod|
   %li
-    = prod.name 
+    = link_to prod.name, prod
 
