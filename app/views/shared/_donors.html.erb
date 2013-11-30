@@ -1,8 +1,8 @@
 <h3> List of Suppliers </h3>
-<ul class="unstyled">
+<ul class="list-unstyled">
   <%- product.donor_product_relations.each do |donation| %>
     <img style='width: 60px;' src=<%=donation.donor.try(:image_url)%>/>
-    <li> <%= donation.donor.name %> </li>
+    <li class="name"> <%= donation.donor.name %> </li>
     <li> <%= donation.donor.address%> </li>
     <li> <%= donation.amount%></li>
     <li> <%= donation.status%></li>

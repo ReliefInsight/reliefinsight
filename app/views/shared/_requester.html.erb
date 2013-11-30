@@ -1,6 +1,7 @@
 <h3> List of Receivers</h3>
 
-<ul class="unstyled">
+
+<ul class="list-unstyled">
   <%- product.requester_product_relations.each do |request| %>
     <img style='width: 60px;' src=<%=request.requester.try(:image_url)%>/>
     <li> <%= request.requester.name %> </li>
