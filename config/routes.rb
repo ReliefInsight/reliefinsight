@@ -1,4 +1,6 @@
 Donation::Application.routes.draw do
+  resources :categories
+
   devise_for :requesters
   devise_for :donors
   devise_for :admins
