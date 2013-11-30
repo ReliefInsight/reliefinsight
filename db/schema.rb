@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130182307) do
+ActiveRecord::Schema.define(version: 20131130185712) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20131130182307) do
     t.datetime "updated_at"
   end
 
+  create_table "donor_product_relations", force: true do |t|
+    t.integer  "donor_id"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "donor_product_relations", ["donor_id"], name: "index_donor_product_relations_on_donor_id"
+  add_index "donor_product_relations", ["product_id"], name: "index_donor_product_relations_on_product_id"
+
   create_table "donors", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -50,9 +60,12 @@ ActiveRecord::Schema.define(version: 20131130182307) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "product_id"
+    t.string   "name"
   end
 
   add_index "donors", ["email"], name: "index_donors_on_email", unique: true
+  add_index "donors", ["product_id"], name: "index_donors_on_product_id"
   add_index "donors", ["reset_password_token"], name: "index_donors_on_reset_password_token", unique: true
 
   create_table "products", force: true do |t|
