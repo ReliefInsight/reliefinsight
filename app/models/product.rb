@@ -15,4 +15,8 @@ class Product < ActiveRecord::Base
   def sum_current_amount
     donor_product_relations.inject(0){|sum, donation| sum += donation.amount}
   end
+
+  def percent
+    (sum_current_amount.to_f / sum_needed_amount.to_f) * 100
+  end
 end
