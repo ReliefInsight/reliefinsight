@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130190521) do
+ActiveRecord::Schema.define(version: 20131130190745) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(version: 20131130190521) do
     t.integer  "needed_amount"
     t.integer  "current_amount"
   end
+
+  create_table "requester_product_relations", force: true do |t|
+    t.integer  "requester_id"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "requester_product_relations", ["product_id"], name: "index_requester_product_relations_on_product_id"
+  add_index "requester_product_relations", ["requester_id"], name: "index_requester_product_relations_on_requester_id"
 
   create_table "requesters", force: true do |t|
     t.string   "email",                  default: "", null: false
