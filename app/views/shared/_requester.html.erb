@@ -3,11 +3,14 @@
 
 <ul class="list-unstyled">
   <%- product.requester_product_relations.each do |request| %>
-    <img style='width: 60px;' src=<%=request.requester.try(:image_url)%>/>
-    <li> <%= request.requester.name %> </li>
-    <li> <%= request.requester.address%> </li>
-    <li> <%= request.amount%> </li>
-    <li> <%= request.status%> </li>
-    <li> <%= time_ago_in_words request.created_at%> </li>
+  <li class="name">
+    <h3><img style='width: 60px;' src=<%=request.requester.try(:image_url)%>>
+     <%= request.requester.name %> </h3>
+    <%= request.requester.address%> 
+   <%= request.amount%> 
+   <span class="pull-right">
+     <span class="uppercase"><%= request.status%></span> <%= time_ago_in_words request.created_at%> ago 
+ 	</span>
+ </li>
   <% end %> 
 </ul>

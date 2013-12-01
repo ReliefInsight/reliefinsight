@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	font-family: 'Libre Baskerville', serif !important;
+}
+
 li.name h3 {
 	text-transform: uppercase;
 	font-size:2em;
@@ -15,4 +19,9 @@ li.name {
 	background: white;
 	padding: 1em;
 	box-shadow: 1px 1px 2px #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.bump-right-1 {
+	margin-right: 10px;
 }

@@ -7,35 +7,21 @@
   <%= notice %>
 </p>  
 
-<div class="container">
-  <div class="row">
-      <div class="col-lg-6">
-        <div id='donors'>
-          <%= render 'shared/donors', product: @product %>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div id='requester'>
-          <%= render 'shared/requester', product: @product %>
-
-            <div class="progress">
-              <%- percent = @product.percent%>
-              <div class="progress-bar" role="progressbar" aria-valuenow=<%=percent%> aria-valuemin="0" aria-valuemax="100" style='<%="width: #{percent}%"%>'>
-                <span class="sr-only"><%=percent%>% Complete</span>
-              </div>
-            </div>
-
-            <span>Requested items <%=percent%> satisfied</span>
-
-        </div>
-     </div>
-  </div><!--row-->
-</div><!--container-->
 
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
       <p>
+
+              <div class="progress progress-striped active">
+              <%- percent = @product.percent%>
+              <div class="progress-bar " role="progressbar" aria-valuenow=<%=percent%> aria-valuemin="0" aria-valuemax="100" style='<%="width: #{percent}%"%>'>
+                <span class="sr-only"><%=percent%>% Complete</span>
+              </div>
+            </div>
+
+            <span>Requested items <%=percent%>% satisfied</span>
+
         <strong>
           Product:
         </strong>  
@@ -61,6 +47,25 @@
     </div>
   </div><!--row-->
 </div><!--container-->
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-6">
+        <div id='donors'>
+          <%= render 'shared/donors', product: @product %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id='requester'>
+          <%= render 'shared/requester', product: @product %>
+
+      
+        </div>
+     </div>
+  </div><!--row-->
+</div><!--container-->
+
+
 
 
 </div><!--page-->
