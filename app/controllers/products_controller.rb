@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_donor!, only: [:show]
+#  before_action :authenticate_donor!, only: [:show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
