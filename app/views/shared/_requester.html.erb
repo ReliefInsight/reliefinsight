@@ -5,16 +5,20 @@
   <%- product.requester_product_relations.each do |request| %>
   <li class="name clearfix">
   	<span class="user-info pull-left">
-    <h3><img style='width: 60px;' src=<%=request.requester.try(:image_url)%>>
-     <%= request.requester.name %> </h3>
+    <h3>
+    	<img style='width: 60px;' src=<%=request.requester.try(:image_url)%>>
+     <%= request.requester.name %> 
+ 	</h3>
     <%= request.requester.address%> 
-   <%= request.amount%> 
+  
 </span>
  
      <span class="time pull-right">
-     	<span class="uppercase pull-right h3"><%= request.status%></span> <br /><%= time_ago_in_words request.created_at%> ago 
+     	<span class="uppercase h3 timestamp"><%= request.status%></span> <br /><%= time_ago_in_words request.created_at%> ago 
+     	<br />
+     	 <span class="box"><%= request.amount%> meals requested</span>
 
- 	</span>
+ 		</span>
  </li>
   <% end %> 
 </ul>
