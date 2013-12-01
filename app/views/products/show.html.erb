@@ -1,6 +1,6 @@
- <div id='main' data-role='page' data-theme='c'>
-                <div data-role='header' data-theme="a">
-                    <h1>Relief Insight Mobile Marketplace</h1>
+ <div id='main' data-role='page' data-theme='a'>
+                 <div data-role='header' data-theme="b" style="text-align: center;">
+                    <img src="/assets/logo2.png" title="Relief Insight Mobile Marketplace" class="center" width="80"><span class="h2 uppercase"> Relief Insight</span >
                 </div><!--header-->
 
 <p id='notice'>
@@ -10,23 +10,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <p>
+    <div class="col-lg-6">
+      
+          <h1><img src="/assets/food.png" title="  <%= @product.name %> " width="200">   <%= @product.name %> </h1>
 
-              <div class="progress progress-striped active">
-              <%- percent = @product.percent%>
-              <div class="progress-bar " role="progressbar" aria-valuenow=<%=percent%> aria-valuemin="0" aria-valuemax="100" style='<%="width: #{percent}%"%>'>
-                <span class="sr-only"><%=percent%>% Complete</span>
+             
+     </div>
+
+      <div class="col-lg-8">
+         <div class="progress progress-striped active">
+                   <%- percent = @product.percent%>
+                   <div class="progress-bar " role="progressbar" aria-valuenow=<%=percent%> aria-valuemin="0" aria-valuemax="100" style='<%="width: #{percent}%"%>'>
+                      <span class="sr-only"><%=percent%>% Complete</span>
+                   </div>
               </div>
-            </div>
 
-            <span>Requested items <%=percent%>% satisfied</span>
+            <h2>Status: <%=percent%>% needs met </h2>
 
-        <strong>
-          Product:
-        </strong>  
-        <%= @product.name %>
-      </p>
+
+      </div>
+      
 
      <!-- 
 
@@ -44,7 +47,7 @@
   | <%= link_to 'Back', products_path %>
 
    -->
-    </div>
+  
   </div><!--row-->
 </div><!--container-->
 
