@@ -48,4 +48,3 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 gem 'rails_admin'
 
-gem 'gmaps4rails'
