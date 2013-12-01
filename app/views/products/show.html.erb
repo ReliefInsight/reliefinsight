@@ -66,6 +66,7 @@
         </div>
      </div>
   </div><!--row-->
+  <div id="map_div" style="width: 400px; height: 300px"></div>
 </div><!--container-->
 
 
@@ -73,4 +74,18 @@
 
 </div><!--page-->
   
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["map"]});
+  google.setOnLoadCallback(drawMap);
+  function drawMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['Lat', 'Lon', 'Name'],
+      [37.4232, -122.0853, 'Work'],
+      <%=locations%>
+    ]);
 
+    var map = new google.visualization.Map(document.getElementById('map_div'));
+    map.draw(data, {showTip: true});
+  }
+</script>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201141838) do
+ActiveRecord::Schema.define(version: 20131201163303) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20131201141838) do
     t.string   "name"
     t.string   "address"
     t.string   "image_url"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "donors", ["email"], name: "index_donors_on_email", unique: true
