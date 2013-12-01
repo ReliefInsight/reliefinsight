@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201125713) do
+ActiveRecord::Schema.define(version: 20131201141838) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -81,6 +81,19 @@ ActiveRecord::Schema.define(version: 20131201125713) do
     t.integer  "current_amount"
     t.string   "image_url"
   end
+
+  create_table "rails_admin_histories", force: true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      limit: 2
+    t.integer  "year",       limit: 5
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
 
   create_table "requester_product_relations", force: true do |t|
     t.integer  "requester_id"
