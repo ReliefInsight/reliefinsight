@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130222058) do
+ActiveRecord::Schema.define(version: 20131201125713) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20131130222058) do
     t.datetime "updated_at"
     t.integer  "needed_amount"
     t.integer  "current_amount"
+    t.string   "image_url"
   end
 
   create_table "requester_product_relations", force: true do |t|
