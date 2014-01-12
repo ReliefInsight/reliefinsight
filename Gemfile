@@ -39,7 +39,7 @@ gem "haml-rails"
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -48,3 +48,12 @@ gem 'unicorn'
 # gem 'debugger', group: [:development, :test]
 gem 'rails_admin'
 
+group :development do
+  gem 'thin'
+  gem 'pry-nav'
+  gem 'pry-debugger'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
