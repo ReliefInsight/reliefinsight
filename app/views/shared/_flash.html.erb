@@ -1,0 +1,13 @@
+<div class='flash-bar'>
+  <% if flash.notice %>
+    <div class="alert alert-success alert-dismissable">
+      <%#<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>%>
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash.alert %>
+    <div class="alert alert-danger alert-dismissable">
+      <%#<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>%>
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+</div
