@@ -5,12 +5,18 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav user-bar pull-right">
-        <li>
-          <a href="">REGISTER</a>
-        </li>
-        <li>
-          <a href="">LOGIN</a>
-        </li>
+        <%- if current_user -%>
+          <li><%= link_to "DASHBOARD", user_path(current_user.id) %></li>
+          <li><%= link_to "ACCOUNT SETTINGS", edit_user_registration_path %></li>
+          <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+        <%- else -%>
+          <li>
+            <%= link_to "REGISTER", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "LOGIN", new_user_session_path %>
+          </li>
+        <%- end -%>
       </ul>
     </div>
   </div>
