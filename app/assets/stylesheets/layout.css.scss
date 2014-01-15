@@ -24,6 +24,7 @@ html, body {
   height: auto;
   margin-top: 50px;
   padding: 30px;
+  text-align: center;
 }
 
 #footer {
@@ -33,4 +34,54 @@ html, body {
 
 #footer .container .text-muted {
   margin: 20px 0;
+}
+
+#main>.container>#category {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main>.container>#category>.col-md-3 {
+  text-align: center;
+  border: 1px solid rgba(86,61,124,.2);
+  font-size: 38px;
+  color: white;
+  font-weight: 900;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+div#food {
+  background: #0a66fb;
+  background-image: url('/assets/food.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+}
+div#water {
+  background: #fa2c00;
+  background-image: url('/assets/water.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+}
+
+div#first_aid {
+  background: #ffb400;
+  background-image: url('/assets/firstaid.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+}
+div#clothes {
+  background: #dadbe0;
+  background-image: url('/assets/clothes.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
 }
