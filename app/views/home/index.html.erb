@@ -1,22 +1,5 @@
-
-
-
-     <div id='main' data-role='page' data-theme='c'>
-                <div data-role='header' data-theme="a" style="text-align: center;">
-                    <img src="/assets/logo2.png" title="Relief Insight Mobile Marketplace" class="center" width="80"><span class="h2 uppercase"> Relief Insight</span	>
-                </div><!--header-->
-
-                <div id='content' data-role='content'>
-                        
-					<%- Product.request_list.each do |prod| %>
-					  <a data-role="button" id="custom-btn" class=<%="prod_#{prod.name.downcase}"%> data-theme="b" href=<%= product_path(prod) %>><%= prod.name.upcase %></a>
-					<% end %>
-                 
-                </div><!--content-->
-                    
-                 <div data-role='footer' data-theme:'c'>
-                     <h4>&copy; 2013 Built for Angelhack NYC</h4>
-                </div><!--footer-->
-
-         </div><!--page-->
-
+<div id='content'>
+  <%- Product.request_list.each do |prod| %>
+    <a data-role="button" id="custom-btn" class=<%="prod_#{prod.name.downcase}"%> href=<%= product_path(prod) %>><%= prod.name.upcase %></a>
+  <% end %>
+</div><!--content-->
