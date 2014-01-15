@@ -1,18 +1,27 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
   <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-6">
+      <%= f.input :email, :autofocus => true, :placeholder => "Email", label: false, input_html: {class: "form-control", id: "inputEmail"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-6">
+      <%= f.input :password, :placeholder => "Password", label: false, input_html: {class: "form-control", id: "inputPassword"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPasswordConfirmation" class="col-sm-2 control-label">Password Confirmation</label>
+    <div class="col-sm-6">
+      <%= f.input :password_confirmation, :placeholder => "Password Confirmation", label: false, input_html: {class: "form-control", id: "inputPasswordConfirmation"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.submit "Sign up", :class => "btn btn-default" %>
+    </div>
+  </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+<%#= render "users/shared/links" %>
