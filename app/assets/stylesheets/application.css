@@ -8,42 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require layout
+ *= require products
  *= require_self
- *= require_tree .
  */
-
-html, body {
-  height: 100%;
-}
-
-.jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 2.1428571435;
-  color: inherit;
-  background-color: #eeeeee;
-}
-
-#wrap {
-  min-height: 100%;
-  height: auto;
-  margin: 0 auto -60px;
-  padding: 0 0 60px;
-}
-
-#main {
-  min-height: 100%;
-  height: auto;
-  padding: 30px;
-}
-
-#footer {
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-#footer .container .text-muted {
-  margin: 20px 0;
-}
