@@ -1,22 +1,21 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+  </div>
+</div>
 
+<div id='content'>
+  <%- Product.request_list.each do |prod| %>
+    <a data-role="button" id="custom-btn" class=<%="prod_#{prod.name.downcase}"%> href=<%= product_path(prod) %>><%= prod.name.upcase %></a>
+  <% end %>
+</div>
 
-
-     <div id='main' data-role='page' data-theme='c'>
-                <div data-role='header' data-theme="a" style="text-align: center;">
-                    <img src="/assets/logo2.png" title="Relief Insight Mobile Marketplace" class="center" width="80"><span class="h2 uppercase"> Relief Insight</span	>
-                </div><!--header-->
-
-                <div id='content' data-role='content'>
-                        
-					<%- Product.request_list.each do |prod| %>
-					  <a data-role="button" id="custom-btn" class=<%="prod_#{prod.name.downcase}"%> data-theme="b" href=<%= product_path(prod) %>><%= prod.name.upcase %></a>
-					<% end %>
-                 
-                </div><!--content-->
-                    
-                 <div data-role='footer' data-theme:'c'>
-                     <h4>&copy; 2013 Built for Angelhack NYC</h4>
-                </div><!--footer-->
-
-         </div><!--page-->
-
+<div class="container">
+  <div class="row" id="category">
+    <div class="col-md-3" id="food">FOOD</div>
+    <div class="col-md-3" id="water">WATER</div>
+    <div class="col-md-3" id="first_aid">FIRST AID</div>
+    <div class="col-md-3" id="clothes">CLOTHES</div>
+  </div>
+</div>

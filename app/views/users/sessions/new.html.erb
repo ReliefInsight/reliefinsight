@@ -1,0 +1,29 @@
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-6">
+      <%= f.input :email, :autofocus => true, :placeholder => "Email", label: false, input_html: {class: "form-control", id: "inputEmail"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-6">
+      <%= f.input :password, :placeholder => "Password", label: false, input_html: {class: "form-control", id: "inputPassword"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <div class="checkbox">
+        <label>
+          <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= f.submit "Sign in", :class => "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
+<%#= render "users/shared/links" %>
