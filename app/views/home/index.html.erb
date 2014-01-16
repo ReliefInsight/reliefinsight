@@ -1,14 +1,5 @@
 <div class="jumbotron">
-  <div class="container">
-    <h1>Hello, world!</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-  </div>
-</div>
-
-<div id='content'>
-  <%- Product.request_list.each do |prod| %>
-    <a data-role="button" id="custom-btn" class=<%="prod_#{prod.name.downcase}"%> href=<%= product_path(prod) %>><%= prod.name.upcase %></a>
-  <% end %>
+  <div id="map_div"></div>
 </div>
 
 <div class="container">
@@ -19,3 +10,19 @@
     <div class="col-md-3" id="clothes">CLOTHES</div>
   </div>
 </div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["map"]});
+  google.setOnLoadCallback(drawMap);
+  function drawMap() {
+    var data = google.visualization.arrayToDataTable([
+      ['Lat', 'Lon', 'Name'],
+      [37.4232, -122.0853, 'Yangbo Du'],
+      <%=locations%>
+    ]);
+ 
+    var map = new google.visualization.Map(document.getElementById('map_div'));
+    map.draw(data, {showTip: true});
+  }
+</script>
