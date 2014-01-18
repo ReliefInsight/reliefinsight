@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201163303) do
+ActiveRecord::Schema.define(version: 20140118143407) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,31 +49,6 @@ ActiveRecord::Schema.define(version: 20131201163303) do
   add_index "donor_product_relations", ["donor_id"], name: "index_donor_product_relations_on_donor_id"
   add_index "donor_product_relations", ["product_id"], name: "index_donor_product_relations_on_product_id"
 
-  create_table "donors", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "product_id"
-    t.string   "name"
-    t.string   "address"
-    t.string   "image_url"
-    t.float    "lat"
-    t.float    "lng"
-  end
-
-  add_index "donors", ["email"], name: "index_donors_on_email", unique: true
-  add_index "donors", ["product_id"], name: "index_donors_on_product_id"
-  add_index "donors", ["reset_password_token"], name: "index_donors_on_reset_password_token", unique: true
-
   create_table "products", force: true do |t|
     t.string   "name"
     t.integer  "amount"
@@ -109,7 +84,7 @@ ActiveRecord::Schema.define(version: 20131201163303) do
   add_index "requester_product_relations", ["product_id"], name: "index_requester_product_relations_on_product_id"
   add_index "requester_product_relations", ["requester_id"], name: "index_requester_product_relations_on_requester_id"
 
-  create_table "requesters", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -124,25 +99,8 @@ ActiveRecord::Schema.define(version: 20131201163303) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "address"
-    t.string   "image_url"
-  end
-
-  add_index "requesters", ["email"], name: "index_requesters_on_email", unique: true
-  add_index "requesters", ["reset_password_token"], name: "index_requesters_on_reset_password_token", unique: true
-
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "type"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
