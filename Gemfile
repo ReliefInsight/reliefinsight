@@ -35,6 +35,8 @@ group :doc do
 end
 gem "haml-rails"
 gem 'simple_form'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
