@@ -1,16 +1,22 @@
-<div class="container">
+<div class="container" id="register">
+  <div class="header">
   <h1 class="left">REGISTER</h1>
+  <ul class="nav nav-pills pull-right">
+    <button type="button" class="btn btn-default btn-sm current" id="first_step">1</button>
+    <button type="button" class="btn btn-default btn-sm secondary" id="second_step">2</button>
+  </ul>
+  </div>
 
   <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
     <%#= devise_error_messages! %>
 
     <div id='register_chose'>
       <h3 class="left">You are registering as a</h3>
-      <div class="form-group">
-        <label for="inputType" class="col-sm-2 control-label">Type</label>
-        <div class="col-sm-6">
-          <%= f.input :type, :collection => ["Requester", "Donor"], :as => :radio_buttons, label: false, input_html: {id: "inputType"} %>
-        </div>
+
+      <%= f.hidden_field :type %>
+      <div class="row" id="type">
+        <div class="col-md-5" id="Requester">REQUESTER</div>
+        <div class="col-md-5" id="Donor">DONOR</div>
       </div>
     </div>
 
@@ -25,7 +31,7 @@
       <div class="form-group">
         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-6">
-          <%= f.input :email, :autofocus => true, :placeholder => "Email", label: false, input_html: {class: "form-control", id: "inputEmail"} %>
+          <%= f.input :email, :placeholder => "Email", label: false, input_html: {class: "form-control", id: "inputEmail"} %>
         </div>
       </div>
       <div class="form-group">
@@ -52,13 +58,35 @@
           <%= f.input :avatar, :as => :file, :placeholder => "Avatar", label: false, input_html: {id: "inputAvatar"} %>
         </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-6">
-        <%= f.submit "Sign up", :class => "btn btn-default" %>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+          <%= f.submit "Sign up", :class => "btn btn-default" %>
+        </div>
       </div>
     </div>
   <% end %>
   <%#= render "users/shared/links" %>
 </div>
+
+<script type="text/javascript">
+  $("#register #Requester").click(function(){
+      $("#register #user_type").val("Requester");
+      $("#register #Donor").hide();
+      $("#register #register_info").show();
+      $("#first_step").removeClass("current");
+      $("#first_step").addClass("secondary");
+      $("#second_step").removeClass("secondary");
+      $("#second_step").addClass("current");
+  });
+
+  $("#register #Donor").click(function(){
+      $("#register #user_type").val("Donor");
+      $("#register #Requester").hide();
+      $("#register #register_info").show();
+      $("#first_step").removeClass("current");
+      $("#first_step").addClass("secondary");
+      $("#second_step").removeClass("secondary");
+      $("#second_step").addClass("current");
+  });
+</script>

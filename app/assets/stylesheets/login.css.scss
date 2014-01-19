@@ -1,0 +1,38 @@
+#register {
+  background-color: #2D2D2D;
+  color: white;
+  width: 100%;
+  height: 800px;
+  opacity: 0.9;
+  padding: 30px 80px 50px 80px;
+}
+
+.simple_form {
+  padding: 20px;
+}
+
+#register_info {
+  display: none;
+}
+
+#register  button.secondary {
+  background-color: #c3c3c3;
+}
+
+#register  button.current {
+  background-color: white;
+}
+
+#register_chose div#type div.col-md-5 {
+  font-size: 150%;
+  font-weight: bolder;
+  background-color: black;
+  padding: 25px;
+  margin: 10px;
+  color: #E1E1E1;
+  cursor:pointer;
+
+  &:hover {
+    color: white;
+  }
+}

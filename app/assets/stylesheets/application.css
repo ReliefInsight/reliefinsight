@@ -10,5 +10,6 @@
  *
  *= require layout
  *= require products
+ *= require login
  *= require_self
  */

@@ -20,10 +20,8 @@ html, body {
 }
 
 #main {
-  min-height: 100%;
-  height: auto;
-  margin-top: 50px;
-  padding: 30px;
+  //height: auto;
+  padding-top: 50px;
   text-align: center;
 }
 
@@ -92,4 +90,8 @@ form {
 
 .left {
   text-align: left;
+}
+
+.right {
+  text-align: right;
 }
