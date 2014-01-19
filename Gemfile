@@ -11,6 +11,10 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'devise'
 
+gem 'cancan'
+
+gem 'rolify'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -56,4 +60,10 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda'
 end

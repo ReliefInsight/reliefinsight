@@ -2,10 +2,8 @@ Donation::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :categories
 
-  devise_for :requesters
-  devise_for :donors
-  devise_for :admins
   devise_for :users
+  
   resources :products
   root to: 'home#index'
 
