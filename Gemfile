@@ -37,6 +37,9 @@ gem "haml-rails"
 gem 'simple_form'
 gem 'carrierwave'
 gem 'mini_magick'
+# for google map
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
