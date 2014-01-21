@@ -1,1 +1,15 @@
-<h2>User's information</h2>
+<div>
+  <div>
+    <h2>User's information</h2>
+    name: <%= @user.name %>
+    <br/>
+    <%= image_tag @user.avatar_url %>
+    <br/>
+    address: <%= @user.address %>
+    <br/>
+    latitude: <%= @user.latitude %>
+    <br>
+    longitude: <%= @user.longitude  %>
+  </div>
+</div>
+

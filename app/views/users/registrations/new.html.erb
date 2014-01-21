@@ -58,6 +58,12 @@
           <%= f.input :avatar, :as => :file, :placeholder => "Avatar", label: false, input_html: {id: "inputAvatar"} %>
         </div>
       </div>
+      <div class="form-group">
+        <label for="inputDescription" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-6">
+          <%= f.input :description, as: :text, :placeholder => "Description", label: false, input_html: {class: "form-control", id: "inputDescription"} %>
+        </div>
+      </div>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
