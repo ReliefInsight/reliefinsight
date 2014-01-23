@@ -2,14 +2,14 @@ Donation::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :categories
 
-  devise_for :requesters
-  devise_for :donors
   devise_for :admins
   devise_for :users
   resources :products
   root to: 'home#index'
 
   resources :users, :path => '', :only => [:show]
+  post "users/create_request", to: "users#create_request", as: "create_request"
+  get "users/destroy_request", to: "users#destroy_request", as: "destroy_request"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
