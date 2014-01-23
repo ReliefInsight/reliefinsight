@@ -4,10 +4,10 @@
   <li class="name clearfix">
   	<span class="user-info pull-left">
     <span>
-    		<img style='width: 60px; height: 60px;' src=<%=request.requester.try(:image_url)%>>
- 		   <span class="h3"> <%= request.requester.name %></span> 
+    		<img style='width: 60px; height: 60px;' src=<%=request.try(:requester).try(:image_url)%>>
+ 		   <span class="h3"> <%= request.try(:requester).try(:name) %></span> 
  	</span>
-    <span><%= request.requester.address%> </span>
+    <span><%= request.try(:requester).try(:address) %> </span>
   	</span>
 
  

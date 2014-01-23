@@ -19,4 +19,20 @@ class Product < ActiveRecord::Base
   def percent
     (sum_current_amount.to_f / sum_needed_amount.to_f) * 100
   end
+
+  def self.food
+    @food ||= Product.find_by(name: "Food")
+  end
+
+  def self.water
+    @water ||= Product.find_by(name: "Water")
+  end
+
+  def self.firstaid
+    @firstaid ||= Product.find_by(name: "First Aid")
+  end
+
+  def self.clothes
+    @clothes ||= Product.find_by(name: "Clothes")
+  end
 end
