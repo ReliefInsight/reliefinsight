@@ -5,9 +5,9 @@
   	<span class="user-info pull-left">
     <span>
     		<img style='width: 60px; height: 60px;' src=<%=request.requester.try(:image_url)%>>
- 		   <span class="h3"> <%= request.requester.name %></span> 
+ 		   <span class="h3"> <%= request.requester.try(:name) %></span> 
  	</span>
-    <span><%= request.requester.address%> </span>
+    <span><%= request.requester.try(:address) %> </span>
   	</span>
 
  
