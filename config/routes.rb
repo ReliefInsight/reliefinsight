@@ -10,6 +10,8 @@ Donation::Application.routes.draw do
   resources :users, :path => '', :only => [:show]
   post "users/create_request", to: "users#create_request", as: "create_request"
   get "users/destroy_request", to: "users#destroy_request", as: "destroy_request"
+  post "users/create_contribute", to: "users#create_contribute", as: "create_contribute"
+  get "users/destroy_contribute", to: "users#destroy_contribute", as: "destroy_contribute"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

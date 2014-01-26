@@ -13,39 +13,82 @@
   </div>
 </div>
 
-<% unless @requests.blank? %>
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-       <th>product</th>
-       <th>requester</th>
-       <th>amount</th>
-       <th>status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @requests.each do |request| %>
+<% if @user.requester? and @requests %>
+  <% unless @requests.blank? %>
+  <div class="container">
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= request.try(:product).try(:name) %></td>
-          <td><%= request.try(:requester).try(:name) %></td>
-          <td><%= request.amount %></td>
-          <td><%= request.status %></td>
-          <td>
-            <%= link_to "destroy", destroy_request_path(id: request.id, requester_id:@user.id) %>
-          </td>
+         <th>product</th>
+         <th>requester</th>
+         <th>amount</th>
+         <th>status</th>
+         <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @requests.each do |request| %>
+          <tr>
+            <td><%= request.try(:product).try(:name) %></td>
+            <td><%= request.try(:requester).try(:name) %></td>
+            <td><%= request.amount %></td>
+            <td><%= request.status %></td>
+            <td>
+              <%= link_to "destroy", destroy_request_path(id: request.id, requester_id:@user.id) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+
+  <%= simple_form_for RequesterProductRelation.new, as: :request, url: create_request_path, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.hidden_field :requester_id , value: @user.id %>
+    <%= f.input :product_id, collection: Product.all %>
+    <%= f.input :amount %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+    </div>
+  <% end %>
 <% end %>
 
-<%= simple_form_for RequesterProductRelation.new, as: :request, url: create_request_path, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.hidden_field :requester_id , value: @user.id %>
-  <%= f.input :product_id, collection: Product.all %>
-  <%= f.input :amount %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
+<% if @user.donor? and @contributes %>
+  <% unless @contributes.blank? %>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+         <th>product</th>
+         <th>contributor</th>
+         <th>amount</th>
+         <th>status</th>
+         <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @contributes.each do |contribute| %>
+          <tr>
+            <td><%= contribute.try(:product).try(:name) %></td>
+            <td><%= contribute.try(:donor).try(:name) %></td>
+            <td><%= contribute.amount %></td>
+            <td><%= contribute.status %></td>
+            <td>
+              <%= link_to "destroy", destroy_contribute_path(id: contribute.id, donor_id:@user.id) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
+  <% end %>
+
+  <%= simple_form_for DonorProductRelation.new, as: :contribute, url: create_contribute_path, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.hidden_field :donor_id, value: @user.id %>
+    <%= f.input :product_id, collection: Product.all %>
+    <%= f.input :amount %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+    </div>
+  <% end %>
 <% end %>

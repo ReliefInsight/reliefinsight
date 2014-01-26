@@ -13,7 +13,12 @@ class Product < ActiveRecord::Base
   end
 
   def percent
-    (sum_current_amount.to_f / sum_needed_amount.to_f) * 100
+    percent = if sum_needed_amount == 0
+                0
+              else
+               (sum_current_amount.to_f / sum_needed_amount.to_f) * 100
+              end
+    percent.round(2)
   end
 
   def self.food

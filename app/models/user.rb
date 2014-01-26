@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode
+
+  def requester?
+    type == "Requester"
+  end
+
+  def donor?
+    type == "Donor"
+  end
 end
