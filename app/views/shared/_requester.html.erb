@@ -1,23 +1,22 @@
 <h3> List of Receivers</h3>
+
 <ul class="list-unstyled">
   <%- product.requester_product_relations.each do |request| %>
-  <li class="name clearfix">
-  	<span class="user-info pull-left">
-    <span>
-    		<img style='width: 60px; height: 60px;' src=<%=request.try(:requester).try(:image_url)%>>
- 		   <span class="h3"> <%= request.try(:requester).try(:name) %></span> 
- 	</span>
-    <span><%= request.try(:requester).try(:address) %> </span>
-  	</span>
+    <li class="name clearfix">
+      <span class="user-info pull-left">
+        <span>
+          <img style='width: 60px; height: 60px;' src=<%=request.try(:requester).try(:image_url)%>>
+          <span class="h3"> <%= request.try(:requester).try(:name) %></span>
+        </span>
+        <span><%= request.try(:requester).try(:address) %> </span>
+      </span>
 
- 
-     <span class="time pull-right">
-     	<span class="uppercase h3 timestamp"><%= request.status%></span> <br />
-     	<span class="ago"><%= time_ago_in_words request.created_at%> ago </span>
-     	<br />
-     	 <span class="box"><%= request.amount%> meals requested</span>
-
- 		</span>
- </li>
-  <% end %> 
+      <span class="time pull-right">
+        <span class="uppercase h3 timestamp"><%= request.status%></span> <br />
+        <span class="ago"><%= time_ago_in_words request.created_at%> ago </span>
+        <br />
+        <span class="box"><%= request.amount%> meals requested</span>
+      </span>
+    </li>
+  <% end %>
 </ul>

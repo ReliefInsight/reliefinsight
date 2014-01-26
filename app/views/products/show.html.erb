@@ -1,87 +1,31 @@
- <div id='main' data-role='page' data-theme='a'>
-   <div data-role='header' data-theme="a" style="text-align: center;">
-     <img src="/assets/logo2.png" title="Relief Insight Mobile Marketplace" class="center" width="80"><span class="h2 uppercase"> Relief Insight</span >
-   </div><!--header-->
-
-<p id='notice'>
-  <%= notice %>
-</p>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <h1><img src="<%= @product.image_url%>" title="  <%= @product.name %> " width="200">   <%= @product.name %> </h1>
-     </div>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1><img src="<%= @product.image_url%>" title="  <%= @product.name %> " width="200">   <%= @product.name %> </h1>
+      </div>
       <div class="col-lg-8">
-         <div class="progress progress-striped active">
-                   <%- percent = @product.percent%>
-                   <div class="progress-bar " role="progressbar" aria-valuenow=<%=percent%> aria-valuemin="0" aria-valuemax="100" style='<%="width: #{percent}%"%>'>
-                      <span class="sr-only"><%=percent%>% Complete</span>
-                   </div>
-              </div>
-
-            <h2>Status: <%=percent%>% needs met </h2>
-
-
-      </div>
-      
-
-     <!-- 
-
-        <strong> Needed Amount:</strong>
-        <%= @product.sum_needed_amount %>
-      </p>
-
-      <p>
-        <strong> Current Amount:</strong>
-        <%= @product.sum_current_amount %>
-      </p>
-
-
-      <%= link_to 'Edit', edit_product_path(@product) %>
-  | <%= link_to 'Back', products_path %>
-
-   -->
-  
-  </div><!--row-->
-</div><!--container-->
-
-<div class="container">
-  <div class="row">
-      <div class="col-lg-6">
-        <div id='donors'>
-          <%= render 'shared/donors', product: @product %>
+        <div class="progress progress-striped active">
+          <%- percent = @product.percent%>
+          <div class="progress-bar " role="progressbar" aria-valuenow=<%=percent%> aria-valuemin="0" aria-valuemax="100" style='<%="width: #{percent}%"%>'>
+            <span class="sr-only"><%=percent%>% Complete</span>
+          </div>
         </div>
+        <h2>Status: <%=percent%>% needs met </h2>
       </div>
-      <div class="col-lg-6">
-        <div id='requester'>
-          <%= render 'shared/requester', product: @product %>
+    </div><!--row-->
+  </div><!--container-->
 
-      
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+          <div id='donors'>
+            <%= render 'shared/donors', product: @product %>
+          </div>
         </div>
-     </div>
-  </div><!--row-->
-  <div id="map_div" style="width: 700px; height: 300px"></div>
-</div><!--container-->
-
-
-
-
-</div><!--page-->
-  
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-  google.load("visualization", "1", {packages:["map"]});
-  google.setOnLoadCallback(drawMap);
-  function drawMap() {
-    var data = google.visualization.arrayToDataTable([
-      ['Lat', 'Lon', 'Name'],
-      [37.4232, -122.0853, 'Yangbo Du'],
-      <%=locations%>
-    ]);
-
-    var map = new google.visualization.Map(document.getElementById('map_div'));
-    map.draw(data, {showTip: true});
-  }
-</script>
+        <div class="col-lg-6">
+          <div id='requester'>
+            <%= render 'shared/requester', product: @product %>
+          </div>
+       </div>
+    </div><!--row-->
+  </div><!--container-->

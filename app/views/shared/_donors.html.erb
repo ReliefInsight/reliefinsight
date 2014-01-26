@@ -1,22 +1,20 @@
 <h3> List of Suppliers </h3>
+
 <ul class="list-unstyled">
   <%- product.donor_product_relations.each do |donation| %>
-  <li class="name clearfix">
-  		<span class="user-info pull-left">
-    
-     <span><img style='width: 60px; height: 60px; padding-right: 10px;' src=<%=donation.donor.try(:image_url)%>>
-     	<span class="h3"><%= donation.donor.name %> </span>
-     </span>
-     <%= donation.donor.address%> 
-   
-    	</span>
- <span class="time pull-right">
- 	<span class="uppercase h3 timestamp"><%= donation.status%> </span> <br />
- 	<span class="ago"><%= time_ago_in_words donation.created_at%> ago </span>
- 	<br />
- 	 	<span class="box">  <%= donation.amount%> meals given</span>
-
- 	</span>
- </li>
-  <% end %> 
+    <li class="name clearfix">
+      <span class="user-info pull-left">
+        <span><img style='width: 60px; height: 60px; padding-right: 10px;' src=<%=donation.donor.try(:image_url)%>>
+          <span class="h3"><%= donation.donor.name %> </span>
+        </span>
+        <%= donation.donor.address%>
+      </span>
+      <span class="time pull-right">
+        <span class="uppercase h3 timestamp"><%= donation.status%> </span> <br />
+        <span class="ago"><%= time_ago_in_words donation.created_at%> ago </span>
+        <br />
+        <span class="box">  <%= donation.amount%> meals given</span>
+      </span>
+    </li>
+  <% end %>
 </ul>
