@@ -1,5 +1,5 @@
 class Requester < User
-  default_scope includes(:roles).where(roles: {name: 'requester'})
+  default_scope { includes(:roles).where(roles: {name: 'requester'}) }
 
   has_many :requester_product_relations, foreign_key: 'user_id'
   has_many :products, through: :requester_product_relations
@@ -9,6 +9,6 @@ class Requester < User
   private
 
     def set_requester_role
-      self.roles << Role.find_or_create_by_name('requester')
+      self.roles << Role.find_or_create_by(name: 'requester')
     end
 end
