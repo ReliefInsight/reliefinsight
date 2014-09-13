@@ -1,5 +1,45 @@
 Relief Insight
 
+Despite worldwide outpouring of support – in disaster, gaps still exist in needs of people on-the-ground and what is received. Individuals have intimate understanding of needs in affected communities, but limited access. An area may receive medicine, but not have syringes. Locals may have skills to provide but cannot communicate availability. We’re creating solutions that bridge these gaps. 
+
+We develop and enhance marketplace solutions, civic intelligence, and disaster-response logistics for disaster cycle goods & service provision. 
+
+Our goal: Increase economic & physical resilience via solutions that connect needed supply & demand requests, update in challenging conditions, and create reward & credential systems for the work people do during disaster cycles. We leverage mobile, e-marketplace, SMS, Arduino, and Wolfram stack technologies. 
+
+Marketplaces create ways for all involved to directly connect, make requests, find, contribute, and fulfill on-the-ground needs. They provide inherent communication between individuals to create efficient disaster responses. What one organization has in surplus can be allocated to another organization in need of that supply. Timelines showing deliveries, requests, and locations, provide inherent information to prioritize need. Ensuring each area has better chances of receiving and contributing aid exactly where needed. 
+
+Individuals directly involved in disaster cycles can lose income or have significant economic impacts due to the initial crises and continuing recovery effort. We support and create innovative ways for those individuals to gain while investing in the recovery efforts in their areas. 
+
+The foundations of open and fast communications are available to bring together in existing technologies. The faster we get H2H, B2B, Org2Org, exactly what they need, the better they serve communities. Come see what we are doing and what we can do for you! 
+
+For more information please visit: 
+
+http://bit.ly/ReliefInSight
+
+Additional Links:
+
+http://stage.reliefinsight.org/
+
+http://reliefinsight.org/
+
+http://dev.reliefinsight.org:8080/
+
+--
+
+http://www.slideshare.net/EveBPaul/relief-insight
+
+http://challengepost.com/software/relief-insight
+
+http://github.com/ReliefInsight/NGOMarketplace
+
+https://www.facebook.com/ReliefInSight
+
+https://twitter.com/reliefinsight
+
+http://geekli.st/hackathon/52793a2660fb3f52d50001f8/project/528d0ce51ba62c6417000017
+
+
+
 
 
 
